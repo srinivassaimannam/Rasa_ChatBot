@@ -1,0 +1,70 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- cab_book
+- cancel
+- details
+- bye
+- from
+- to
+- nano
+- micro
+- macro
+slots:
+  arrival:
+    type: text
+  bookingid:
+    type: text
+  mobile:
+    type: text
+  source:
+    type: text
+responses:
+  utter_ask_source:
+  - text: Please mention the pick-up address
+  utter_ask_arrival:
+  - text: Now please mention the destination address
+  utter_ask_mobile:
+  - text: Please provide your mobile number
+  utter_ask_bookingid:
+  - text: Can you mention your booking ID
+  utter_greet:
+  - text: Hello, How may I help you
+  utter_details:
+  - text: Can I know your booking ID
+  utter_passengers:
+  - text: Sure, Please select the number of passengers
+    buttons:
+    - title: 1-2
+      payload: /nano
+    - title: 3-4
+      payload: /micro
+    - title: 5-8
+      payload: /macro
+  utter_bye:
+  - text: Have a good day, Bye
+  utter_from:
+  - text: Please mention the pick-up point
+  utter_to:
+  - text: Please mention the destination point
+  utter_booked:
+  - text: Your cab has been booked. Here are the details Booking ID={id} Mobile={number}
+      From {pick_up} To {destination}. Happy Journey
+actions:
+- utter_greet
+- utter_details
+- utter_passengers
+- utter_bye
+- utter_from
+- utter_to
+- utter_booked
+- utter_ask_source
+- utter_ask_arrival
+- utter_ask_mobile
+- utter_ask_bookingid
+forms:
+- form_info
+- form_cancel
+- form_details
